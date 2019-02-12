@@ -1,4 +1,5 @@
-class Api::V1:: UsersController < ApplicationController
+
+class Api::V1::UsersController < ApplicationController
 
   
     def index
@@ -16,14 +17,14 @@ class Api::V1:: UsersController < ApplicationController
     end
 
     def create 
-        @user = User.new({name: params[:name], email: params[:email], password: params[:password]})
+        @user = User.new({name: params[:name], email:params[:email], password: params[:password]})
     
         if @user.save
       
             render json: @user
       
             else
-              redirect_to api_v1_users_path 
+              redirect_to  api_v1_users_path
             end 
     
     end 
@@ -35,3 +36,4 @@ class Api::V1:: UsersController < ApplicationController
     end 
 
 end
+
